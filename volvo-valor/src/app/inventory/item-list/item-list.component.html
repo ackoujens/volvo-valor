@@ -1,0 +1,53 @@
+<table mat-table [dataSource]="itemService.itemList">
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let item"> {{item.id}} </td>
+  </ng-container>
+
+  <!-- Barcode Column -->
+  <ng-container matColumnDef="barcode">
+    <th mat-header-cell *matHeaderCellDef> Barcode </th>
+    <td mat-cell *matCellDef="let item"> {{item.barcode}} </td>
+  </ng-container>
+
+  <!-- Title Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let item"> {{item.title}} </td>
+  </ng-container>
+  
+  <!-- Price Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let item"> {{item.price}} </td>
+  </ng-container>
+
+  <!-- Shipping Cost Column -->
+  <ng-container matColumnDef="shippingCost">
+     <th mat-header-cell *matHeaderCellDef> Shipping Cost </th>
+     <td mat-cell *matCellDef="let item"> {{item.shippingCost}} </td>
+  </ng-container>
+
+  <!-- Import Duties Column -->
+  <ng-container matColumnDef="importDuties">
+    <th mat-header-cell *matHeaderCellDef> Import Duties </th>
+    <td mat-cell *matCellDef="let item"> {{item.importDuties}} </td>
+  </ng-container>
+
+  <!-- Controls Column -->
+  <ng-container matColumnDef="controls">
+    <th mat-header-cell *matHeaderCellDef> Controls </th>
+    <td mat-cell *matCellDef="let item">
+      <button mat-button (click)="onEdit(item)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-button color="warn" (click)="onDelete(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

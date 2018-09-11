@@ -1,0 +1,15 @@
+<label>Server Name</label>
+<input 
+    type="text"
+    [(ngModel)]="serverName">
+
+<button mat-button 
+    [disabled]="!allowNewServer" 
+    (click)="onCreateServer()">Add server</button>
+
+<p *ngIf="serverCreated; else noServer">Server {{ serverName }} was created.</p>
+<ng-template #noServer>
+    <p>No server was created.</p>
+</ng-template>
+
+<app-server *ngFor="let server of servers"></app-server>

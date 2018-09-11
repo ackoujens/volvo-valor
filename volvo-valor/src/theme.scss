@@ -1,0 +1,20 @@
+// TODO: Custumize theme entirely and create a Volvo Valor style
+// https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1
+
+// Define pallette for theme
+//$volvovalor-app-primary: mat-palette($mat-blue-grey, 900);
+$theme-primary: mat-palette($mat-grey, 900);
+$theme-accent:  mat-palette($mat-red, A200);
+$theme-warn:    mat-palette($mat-red);
+
+$theme:   mat-light-theme(
+    $theme-primary, 
+    $theme-accent, 
+    $theme-warn
+);
+
+// TODO: Alter typography
+// https://material.angular.io/guide/typography
+
+// FIXME: Double call? (styles.scss)
+@include angular-material-theme($theme);

@@ -1,0 +1,50 @@
+<!-- TODO: Indicate the * means a field is required-->
+
+<form #itemForm="ngForm" (ngSubmit)="onSubmit(itemForm)" (ngReset)="onReset(itemForm)" autocomplete="off">
+  <input type="hidden" name="id" #id="ngModel" [(ngModel)]="itemService.selectedItem.id">
+
+  <!-- TODO: Look for longest possible barcode and limit to that number 
+       TODO: Need solution for rescanning barcodes and not adding it to the previous numbers but clearing it beforehand
+       TODO: Solution for recognizing barcode scans, omitting the need to focus on the field -->
+  <mat-form-field>
+    <input matInput type="number" name="barcode" #barcode="ngModel" [(ngModel)]="itemService.selectedItem.barcode" placeholder="Barcode">
+    <mat-hint>Focus on this field and scan a barcode</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" name="title" #title="ngModel" [(ngModel)]="itemService.selectedItem.title" placeholder="Title" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-icon matPrefix>euro_symbol</mat-icon>
+    <input matInput type="number" name="price" #price="ngModel" [(ngModel)]="itemService.selectedItem.price" placeholder="Price">
+    <mat-hint>Total paid including taxes</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-icon matPrefix>euro_symbol</mat-icon>
+    <input matInput type="number" name="shippingCost" #shippingCost="ngModel" [(ngModel)]="itemService.selectedItem.shippingCost" placeholder="Shipping Cost">
+    <mat-hint>Divide if multiple items in single shipment</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-icon matPrefix>euro_symbol</mat-icon>
+    <input matInput type="number" name="importDuties" #importDuties="ngModel" [(ngModel)]="itemService.selectedItem.importDuties" placeholder="Import Duties">
+    <mat-hint>Additional costs asside from price and shipping.</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput type="text" name="body" #price="ngModel" [(ngModel)]="itemService.selectedItem.body" placeholder="Body"></textarea>
+  </mat-form-field>
+
+  <div class="button-row">
+    <button mat-button type="submit" [disabled]="!itemForm.valid">
+      <i class="fa fa-floppy-o"></i>
+       Submit
+    </button>
+    <button mat-button type="reset" color="warn">
+      <i class="fa fa-repeat"></i>
+       Reset
+    </button>
+  </div>
+</form>

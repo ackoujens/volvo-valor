@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+
+// Always include only once per project
+@include mat-core();
+
+// Import custom theme
+@import 'theme.scss';
+// @import 'my-light-theme.scss';
+// @import 'my-dark-theme.scss';
+
+// Specify theme class eg: <body class="my-theme"> ... </body>
+// could come in handy when handling multiple themes
+.theme {
+    // use our theme with angular-material-theme mixin
+    @include angular-material-theme($theme);
+}
+
+/*
+// additional css classes
+// you can hardcode one of them on the <body> tag 
+// or switch dynamically during runtime with [class]
+.my-light-theme {
+  @include angular-material-theme($my-light-theme);
+}
+  
+.my-dark-theme {
+  @include angular-material-theme($my-dark-theme);
+}
+*/
+
+// Big title font
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:900");
+
+.hero-title {
+    font-size: 8vw;
+    font-family: 'Work Sans', sans-serif;
+    color: rgb(243, 243, 243);
+    text-transform: uppercase;
+    line-height: .83em;
+    text-align: center;
+    -moz-transform: scale(0.9, 1.25);
+    -webkit-transform: scale(0.9, 1.25);
+    -ms-transform: scale(0.9, 1.25);
+    
+    a {
+        text-decoration: none !important;
+    }
+  }
+  
+
+html, body {
+    height: 100%;
+}
+
+body { 
+    margin: 0;
+}
