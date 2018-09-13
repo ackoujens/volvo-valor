@@ -89,6 +89,16 @@ afs.collection('people', ref => ref.orderBy('age').limit(5) )
 
 // Offset by a property
 afs.collection('people', ref => ref.orderBy('name').startAt('Jeff') )
+
+// Get items by equality to a property
+afs.collection('people', ref => ref.where('name', '==', 'jeff') )
+
+// Get items by range operators
+afs.collection('people', ref => ref.where('age', '>=', 5) 
+
+// Chain equality for multiple properties
+afs.collection('people', ref => ref.where('age', '==', 5) .where('name', '==', 'jeff')
+
 */
 
   private getDocument(id: string): AngularFirestoreDocument {
