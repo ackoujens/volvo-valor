@@ -5,7 +5,9 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/take';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class AuthGuard /*implements CanActivate*/ {
 
     constructor(private auth: AngularFireAuth, private router: Router) {}

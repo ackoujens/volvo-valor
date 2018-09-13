@@ -76,6 +76,30 @@ export class ItemService {
   private getCollection(): AngularFirestoreCollection {
     return this.db.collection<Item>(config.collection_endpoint);
   }
+  /* TODO: Override getCollection method with other possibilities for querying
+  // Order ascending
+afs.collection('people', ref => ref.orderBy('age') )
+
+// Order descending by numbers or strings
+afs.collection('people', ref => ref.orderBy('age', 'desc') )
+afs.collection('people', ref => ref.orderBy('name', 'desc') ) // reverse alphabetical
+
+// Limit results
+afs.collection('people', ref => ref.orderBy('age').limit(5) )
+
+// Offset by a property
+afs.collection('people', ref => ref.orderBy('name').startAt('Jeff') )
+
+// Get items by equality to a property
+afs.collection('people', ref => ref.where('name', '==', 'jeff') )
+
+// Get items by range operators
+afs.collection('people', ref => ref.where('age', '>=', 5) 
+
+// Chain equality for multiple properties
+afs.collection('people', ref => ref.where('age', '==', 5) .where('name', '==', 'jeff')
+
+*/
 
   private getDocument(id: string): AngularFirestoreDocument {
     return this.db.doc<Item>(`${config.collection_endpoint}/${id}`);

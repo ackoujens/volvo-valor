@@ -1,4 +1,3 @@
-import { FileService } from './services/file.service';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +23,6 @@ import { UsersComponent } from './users/users.component';
 import { DetailsComponent } from './details/details.component';
 import { ServerComponent } from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
-import { TodoService } from './services/todo.service';
 import { TodoComponent } from './todo/todo.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
@@ -34,7 +32,6 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { PostsModule } from './posts/posts.module';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
-import { AuthGuard } from './services/auth.service';
 
 @NgModule({
    declarations: [
@@ -77,11 +74,6 @@ import { AuthGuard } from './services/auth.service';
       PostsModule
    ],
    schemas: [ NO_ERRORS_SCHEMA ],
-   providers: [
-      TodoService,
-      FileService,
-      AuthGuard
-   ],
    bootstrap: [
       AppComponent
    ]

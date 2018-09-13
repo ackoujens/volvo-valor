@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 
 import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+    providedIn: 'root',
+  })
 export class TodoService {
     api_url = 'http://localhost:3000';
     todoUrl = `${this.api_url}/api/todos`;
