@@ -11,7 +11,9 @@ import { filter, finalize, switchMap, tap } from 'rxjs/operators';
 - You monitor progress by subscribing to percentageChanges or snapshotChanges on the task.
 */
 
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class FileService {
 
   // Main task

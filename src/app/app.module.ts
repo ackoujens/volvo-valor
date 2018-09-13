@@ -77,11 +77,6 @@ import { AuthGuard } from './services/auth.service';
       PostsModule
    ],
    schemas: [ NO_ERRORS_SCHEMA ],
-   providers: [
-      TodoService,
-      FileService,
-      AuthGuard
-   ],
    bootstrap: [
       AppComponent
    ]
