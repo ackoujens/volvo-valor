@@ -19,6 +19,10 @@
       required
       minlength="3"
       #nameInput="ngModel">
+
+      <div class="help is-error" *ngIf="nameInput.invalid && nameInput.dirty">
+        Name is required and needs to be at least 3 characters long.
+      </div>
   </mat-form-field>
 
   <!-- email -->
@@ -31,7 +35,11 @@
       [(ngModel)]="email"
       required
       email
-      #nameInput="ngModel">
+      #emailInput="ngModel">
+
+      <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
+        Needs to be a valid email.
+      </div>
   </mat-form-field>
 
   <!-- message -->
@@ -42,7 +50,11 @@
       placeholder="What's on your mind?" 
       [(ngModel)]="message"
       required
-      #nameInput="ngModel"></textarea>
+      #messageInput="ngModel"></textarea>
+
+      <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
+        Your message is required!
+      </div>
   </mat-form-field>
 
   <button mat-button type="submit" class="button is-danger is-large">Submit</button>
