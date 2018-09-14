@@ -5,7 +5,46 @@
   - Instagram (VolvoValor)
   - Twitter (VolvoValor)
 -->
+<mat-toolbar>Contact Us!</mat-toolbar>
 
-<p>
-  contact works!
-</p>
+<form (ngSubmit)="processForm()">
+  <!-- name -->
+  <mat-form-field>
+    <input matInput 
+      type="text" 
+      name="name" 
+      class="input" 
+      placeholder="Your Name" 
+      [(ngModel)]="name"
+      required
+      minlength="3"
+      #nameInput="ngModel">
+  </mat-form-field>
+
+  <!-- email -->
+  <mat-form-field>
+    <input matInput 
+      type="email" 
+      name="email" 
+      class="input" 
+      placeholder="Your Email" 
+      [(ngModel)]="email"
+      required
+      email
+      #nameInput="ngModel">
+  </mat-form-field>
+
+  <!-- message -->
+  <mat-form-field>
+    <textarea matInput 
+      class="textarea" 
+      name="message" 
+      placeholder="What's on your mind?" 
+      [(ngModel)]="message"
+      required
+      #nameInput="ngModel"></textarea>
+  </mat-form-field>
+
+  <button mat-button type="submit" class="button is-danger is-large">Submit</button>
+
+</form>
