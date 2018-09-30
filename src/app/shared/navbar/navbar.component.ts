@@ -1,7 +1,7 @@
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthService } from '../../core/auth.service';
+// import { AuthService } from '../../core/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   isHandset: Observable<BreakpointState> = this.breakpointObserver.observe(Breakpoints.Handset);
 
-  constructor(private breakpointObserver: BreakpointObserver, public auth: AuthService) {}
+  constructor(private breakpointObserver: BreakpointObserver, /* public auth: AuthService */) {}
 
   ngOnInit() {}
 }
