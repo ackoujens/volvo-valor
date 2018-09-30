@@ -94,7 +94,7 @@ afs.collection('people', ref => ref.orderBy('name').startAt('Jeff') )
 afs.collection('people', ref => ref.where('name', '==', 'jeff') )
 
 // Get items by range operators
-afs.collection('people', ref => ref.where('age', '>=', 5) 
+afs.collection('people', ref => ref.where('age', '>=', 5)
 
 // Chain equality for multiple properties
 afs.collection('people', ref => ref.where('age', '==', 5) .where('name', '==', 'jeff')
