@@ -14,12 +14,12 @@ import { trigger, style, transition, animate, keyframes, query, stagger } from '
         query(':enter',
         [
           style({ opacity: 0, transform: 'translateY(-15px)' }),
-          stagger('50ms', 
+          stagger('50ms',
           animate('550ms ease-out',
         style({ opacity: 1, transform: 'translateY(0px)' })))
         ], { optional: true }),
         query(':leave', animate('50ms', style({ opacity: 0 })), {
-          optional: true 
+          optional: true
         })
       ])
     ])
@@ -34,7 +34,7 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
     this.data.getUsers().subscribe(
       data => this.users$ = data
-    )
+    );
   }
 
 }
