@@ -24,6 +24,7 @@ script:
 
 deploy:
   provider: firebase
+  skip_cleanup: true
   on:
     all_branches: true
   token:
