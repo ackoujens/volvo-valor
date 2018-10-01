@@ -2,10 +2,6 @@ language: node_js
 node_js:
   - "8.11"
 
-# branches:
-#  only:
-#    - master
-
 addons:
   chrome: stable
 
@@ -28,5 +24,5 @@ script:
 deploy:
   provider: firebase
   token:
-    branch: bugfix-travis-deploy
+    all_branches: true
     secure: $FIREBASE_TOKEN
