@@ -2,9 +2,9 @@ language: node_js
 node_js:
   - "8.11"
 
-branches:
-  only:
-    - master
+# branches:
+#  only:
+#    - master
 
 addons:
   chrome: stable
