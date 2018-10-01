@@ -4,7 +4,7 @@ node_js:
 
 branches:
   only:
-    - bugfix-travis-deploy
+    - master
 
 addons:
   chrome: stable
@@ -28,4 +28,5 @@ script:
 deploy:
   provider: firebase
   token:
+    branch: bugfix-travis-deploy
     secure: $FIREBASE_TOKEN
