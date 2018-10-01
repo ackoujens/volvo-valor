@@ -24,6 +24,6 @@ script:
 
 deploy:
   provider: firebase
+  all_branches: true
   token:
-    all_branches: true
     secure: $FIREBASE_TOKEN
