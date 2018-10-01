@@ -2,10 +2,9 @@ language: node_js
 node_js:
   - "8.11"
 
-# TODO: Release comments when deploy is going as planned
-# branches:
-#  only:
-#    - master
+branches:
+  only:
+    - bugfix-travis-deploy
 
 addons:
   chrome: stable
