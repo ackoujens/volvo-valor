@@ -1,4 +1,4 @@
-# Volvo Valor
+# Volvo Valor [![Build Status](https://travis-ci.org/ackoujens/volvo-valor.svg?branch=master)](https://travis-ci.org/ackoujens/volvo-valor)
 
 A fanmade website to host projects and blog articles on. Also a backend tool for keeping inventory and maintenance schedules.
 

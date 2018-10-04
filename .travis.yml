@@ -2,10 +2,6 @@ language: node_js
 node_js:
   - "8.11"
 
-branches:
-  only:
-    - master
-
 addons:
   chrome: stable
 
@@ -20,12 +16,15 @@ cache:
 
 script:
   - ng lint
-  - ng test --watch=false
+  - ng test --watch=false --progress=false --browsers=ChromeHeadlessCI
+  - ng e2e --protractor-config=./e2e/protractor-ci.conf.js
   - ng build --prod
-  #- npm run test -- --watch=false --progress=false --browsers=ChromeHeadlessCI
-  #- npm run e2e -- --protractor-config=./e2e/protractor-ci.conf.js
+  - git rm -f package-lock.json
 
 deploy:
   provider: firebase
+  skip_cleanup: true
+  on:
+    branch: master
   token:
     secure: $FIREBASE_TOKEN
