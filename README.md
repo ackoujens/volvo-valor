@@ -4,6 +4,11 @@ A fanmade website to host projects and blog articles on. Also a backend tool for
 
 ## How to use
 
+## Install
+
+- Navigate to root directory
+- Run `npm install` and make sure there are no errors present
+
 ### Development
 
 - Run app locally with `npm start`
@@ -16,10 +21,33 @@ A fanmade website to host projects and blog articles on. Also a backend tool for
 
 ## To do
 
-- Implement custom form field https://material.angular.io/guide/creating-a-custom-form-field-control
-- Find use for elevation helpers https://material.angular.io/guide/elevation
+- Implement custom form field <https://material.angular.io/guide/creating-a-custom-form-field-control>
+- Find use for elevation helpers <https://material.angular.io/guide/elevation>
 - Learn protractor testing
 - Hardware barcode scanner support
 - Soft barcode scanning by using smartphone camera or webcam
 - Blog posts section
 - Contact page using form and social media
+
+## Structure
+
+- ROOT
+  - e2e
+  - functions (google cloud functions)
+  - scripts (external scripts)
+  - src
+    - app
+      - admin (backend)
+        - ...
+        - ...
+      - directives
+      - models
+      - pipes
+      - services
+      - frontend
+        - ...
+        - ...
+    - assets
+      - icons
+      - images
+    - environments
